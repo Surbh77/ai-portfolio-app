@@ -1,6 +1,5 @@
 fastapi
-base64
 pydantic
-langchain
-langchain_community
-langchain_openai
+langchain==0.0.340
+langchain-community==0.0.19
+langchain-openai
