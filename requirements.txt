@@ -1,5 +1,4 @@
 fastapi
-base64
 pydantic
 langchain
 langchain_community
