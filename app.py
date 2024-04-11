@@ -1,3 +1,6 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 from fastapi import FastAPI
 from pydantic import BaseModel
 from langchain.chat_models import ChatOpenAI
