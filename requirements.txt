@@ -4,3 +4,4 @@ pydantic
 langchain==0.0.340
 langchain-community==0.0.19
 langchain-openai
+chromadb
