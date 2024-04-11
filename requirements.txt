@@ -1,5 +1,5 @@
 fastapi
 pydantic
 langchain
-langchain_community
-langchain_openai
+langchain-community
+langchain-openai
