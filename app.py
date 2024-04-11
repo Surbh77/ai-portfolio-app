@@ -1,12 +1,10 @@
 from fastapi import FastAPI
-import base64
 from pydantic import BaseModel
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import (
     AIMessage,
     HumanMessage,
     SystemMessage)
-import json
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 import os
