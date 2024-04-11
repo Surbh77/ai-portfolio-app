@@ -9,10 +9,9 @@ from langchain.schema import (
 import json
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
+import os
 
-
-
-openai_api_key='YOUR_OPENAI_API_KEY'
+openai_api_key = os.getenv('OPENAI_API_KEY')
 
 tokens=300
 gpt = ChatOpenAI(max_tokens=tokens,api_key=openai_api_key)
@@ -25,7 +24,7 @@ class TextData(BaseModel):
 
 @app.post("/assiatant")
 async def talk(text_data: TextData):
-    embeddings = OpenAIEmbeddings(api_key=decoded)
+    embeddings = OpenAIEmbeddings(api_key=openai_api_key)
     db3 = Chroma(persist_directory='./chroma',collection_name='my_details', embedding_function=embeddings)
     docs = db3.similarity_search(text_data.text,k=4)
     content=''.join([i.page_content for i in docs])
