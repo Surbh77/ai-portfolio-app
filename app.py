@@ -11,13 +11,25 @@ from langchain.schema import (
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 import os
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+# Add middleware to enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # You can set specific origins here instead of "*"
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_headers=["*"],
+)
 
 openai_api_key = os.getenv('OPENAI_API_KEY')
 
 tokens=300
 gpt = ChatOpenAI(max_tokens=tokens,api_key=openai_api_key)
 
-app = FastAPI()
+
 
 class TextData(BaseModel):
     text: str
