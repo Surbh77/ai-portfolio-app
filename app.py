@@ -10,10 +10,11 @@ from langchain.schema import (
     SystemMessage)
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
+import os
 
 
 
-openai_api_key='YOUR_OPENAI_API_KEY'
+openai_api_key=os.getenv('OPENAI_API_KEY')
 
 tokens=300
 gpt = ChatOpenAI(max_tokens=tokens,api_key=openai_api_key)
