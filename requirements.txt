@@ -6,3 +6,4 @@ langchain-community==0.0.19
 langchain-openai
 chromadb
 pysqlite-binary
+
