@@ -1,6 +1,0 @@
-fastapi
-base64
-pydantic
-langchain
-langchain_community
-langchain_openai
