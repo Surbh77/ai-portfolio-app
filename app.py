@@ -55,10 +55,8 @@ async def talk(text_data: TextData):
     """
     
     message=initial_prompt
-    print(message)
     response=gpt([HumanMessage(content=message)])
     
     ans=response.content
-    print(ans)
 
     return {"blendData": f"{ans}","filename":'abcd'}
