@@ -18,6 +18,7 @@ CHROMA_PATH = "chroma"
 
 PROMPT_TEMPLATE = """
 Answer the question based only on the following context:
+And if the question asked is not based on the context give a polite answer that you only have information related to saurabh.
 {context}
  - -
 Answer the question based on the above context: {question}
